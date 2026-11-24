@@ -1,0 +1,131 @@
+/* Visual pensado para idosos no celular:
+   letra grande, alto contraste, botões largos e fáceis de tocar. */
+
+:root {
+  --azul: #003a70;
+  --amarelo: #ffd400;
+  --fundo: #f4f2ed;
+  --texto: #1a1a1a;
+  --cinza: #4a4a4a;
+  --verde: #1b5e20;
+  --vermelho: #8b0000;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.375rem; /* 22px: letra grande */
+  line-height: 1.5;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+/* Cabeçalho compacto: sobra mais espaço para a lista */
+header {
+  background: var(--azul);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+header h1 { margin: 0; font-size: 1.75rem; }
+header p { margin: 0.25rem 0 0; font-size: 1.125rem; }
+
+footer {
+  color: var(--cinza);
+  font-size: 1.125rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0.75rem;
+}
+
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2 { margin: 0 0 0.5rem; font-size: 1.625rem; }
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+input {
+  width: 100%;
+  min-height: 3.5rem; /* 56px */
+  font-size: 1.375rem;
+  padding: 0.75rem;
+  border: 2px solid var(--azul);
+  border-radius: 10px;
+}
+
+/* Botões principais: largura toda, fáceis de acertar com o polegar */
+button {
+  display: block;
+  width: 100%;
+  min-height: 3.75rem; /* 60px */
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: var(--azul);
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: var(--verde);
+  cursor: default;
+}
+
+/* "Remover" discreto, abaixo, para não ser apertado por engano */
+button.remover {
+  width: auto;
+  min-height: 3rem;
+  margin: 0.5rem 0 0 auto;
+  padding: 0 0.75rem;
+  font-size: 1.125rem;
+  background: none;
+  color: var(--vermelho);
+  text-decoration: underline;
+}
+
+/* Foco visível para quem usa teclado */
+button:focus-visible, input:focus-visible {
+  outline: 4px solid var(--amarelo);
+  outline-offset: 2px;
+}
+
+ul { list-style: none; padding: 0; margin: 0; }
+
+li {
+  border-top: 2px solid #ddd;
+  padding: 1rem 0;
+}
+
+li p { margin: 0; }
+.horario { font-size: 2rem; font-weight: bold; color: var(--azul); }
+.nome    { font-size: 1.625rem; font-weight: bold; }
+.dose    { color: var(--cinza); }
+
+li.tomado .horario,
+li.tomado .nome { color: var(--verde); text-decoration: line-through; }
+
+.aviso {
+  background: var(--amarelo);
+  color: var(--texto);
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 3px solid var(--vermelho);
+}
