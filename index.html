@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lembrete de Remédios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Lembrete de Remédios</h1>
+    <p>Cadastre seus remédios e marque quando tomar.</p>
+  </header>
+
+  <main>
+    <!-- Aviso de remédios atrasados. Fica escondido até o JavaScript encontrar algum atraso. -->
+    <section id="aviso" class="aviso" role="alert" hidden></section>
+
+    <!-- 1. Lista de remédios de hoje (vem primeiro: é a tarefa principal do dia) -->
+    <section>
+      <h2>Remédios de hoje</h2>
+      <p id="vazio">Nenhum remédio cadastrado ainda.</p>
+      <ul id="lista"></ul>
+    </section>
+
+    <!-- 2. Formulário de cadastro -->
+    <section>
+      <h2>Adicionar remédio</h2>
+      <form id="formulario">
+        <label for="nome">Nome do remédio</label>
+        <input type="text" id="nome" required placeholder="Ex.: Losartana">
+
+        <label for="horario">Horário</label>
+        <input type="time" id="horario" required>
+
+        <label for="dose">Dose</label>
+        <input type="text" id="dose" required placeholder="Ex.: 1 comprimido">
+
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Protótipo escolar. Não substitui orientação médica.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
